@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15E27e" minimumToolsVersion="Xcode 7.0">
+    <entity name="Appointment" representedClassName=".Appointment" syncable="YES">
+        <attribute name="interviewer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="interviewTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="isCompleted" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="member" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Member" inverseName="appointments" inverseEntity="Member" syncable="YES"/>
+    </entity>
+    <entity name="Member" representedClassName=".Member" syncable="YES">
+        <attribute name="isInterviewer" optional="YES" attributeType="Integer 16" syncable="YES"/>
+        <attribute name="memberEmail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="memberName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="memberPhone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profileImage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="appointments" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Appointment" inverseName="member" inverseEntity="Appointment" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Appointment" positionX="-54" positionY="18" width="128" height="120"/>
+        <element name="Member" positionX="-63" positionY="-18" width="128" height="135"/>
+    </elements>
+</model>

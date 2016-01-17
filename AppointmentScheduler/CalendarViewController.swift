@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  CalendarViewController.swift
 //  AppointmentScheduler
 //
 //  Created by Scott Knutti on 1/14/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class CalendarViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
