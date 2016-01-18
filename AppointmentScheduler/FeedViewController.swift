@@ -105,6 +105,8 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
                 messageLabel.sizeToFit()
                 tableView.backgroundView = messageLabel
                 tableView.separatorStyle = .None
+            } else {
+                tableView.backgroundView = nil
             }
             
             return numRows
@@ -166,7 +168,7 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         
         if let member = record.valueForKey("member") as? Member {
             cell.memberLabel!.text = member.memberName
-            cell.profileImage!.image = UIImage(data: member.profileImage)
+            cell.profileImage!.image = member.profileImage
         }
         
         if let interviewer = record.valueForKey("interviewer") as? String {

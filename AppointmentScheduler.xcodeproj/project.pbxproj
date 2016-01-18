@@ -28,6 +28,9 @@
 		78D079D71C49607200F8B98C /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D079D61C49607200F8B98C /* Appointment.swift */; };
 		78E79D471C4B032A0058448C /* CustomAppointmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E79D461C4B032A0058448C /* CustomAppointmentCell.swift */; };
 		78E79D491C4B5F2A0058448C /* RandomUserClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E79D481C4B5F2A0058448C /* RandomUserClient.swift */; };
+		78E79D4B1C4D616C0058448C /* RandomUserConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E79D4A1C4D616C0058448C /* RandomUserConvenience.swift */; };
+		78E79D4D1C4D64960058448C /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E79D4C1C4D64960058448C /* ImageCache.swift */; };
+		78E79D4F1C4D933B0058448C /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E79D4E1C4D933B0058448C /* Reach.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		78D079D61C49607200F8B98C /* Appointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
 		78E79D461C4B032A0058448C /* CustomAppointmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAppointmentCell.swift; sourceTree = "<group>"; };
 		78E79D481C4B5F2A0058448C /* RandomUserClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomUserClient.swift; sourceTree = "<group>"; };
+		78E79D4A1C4D616C0058448C /* RandomUserConvenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomUserConvenience.swift; sourceTree = "<group>"; };
+		78E79D4C1C4D64960058448C /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		78E79D4E1C4D933B0058448C /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,7 @@
 				78D079CB1C48588D00F8B98C /* CustomHeaderCell.swift */,
 				78D079CD1C48610B00F8B98C /* CustomMemberCell.swift */,
 				78E79D461C4B032A0058448C /* CustomAppointmentCell.swift */,
+				78E79D4E1C4D933B0058448C /* Reach.swift */,
 				78D079B31C483A2900F8B98C /* Main.storyboard */,
 				78D079B61C483A2900F8B98C /* Assets.xcassets */,
 				78D079B81C483A2900F8B98C /* LaunchScreen.storyboard */,
@@ -119,11 +126,13 @@
 		78D079C61C483C4000F8B98C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				78E79D4C1C4D64960058448C /* ImageCache.swift */,
 				78D079C41C483C2D00F8B98C /* CoreDataStackManager.swift */,
 				78D079D11C49554C00F8B98C /* Model.xcdatamodeld */,
 				78D079D41C495F1600F8B98C /* Member.swift */,
 				78D079D61C49607200F8B98C /* Appointment.swift */,
 				78E79D481C4B5F2A0058448C /* RandomUserClient.swift */,
+				78E79D4A1C4D616C0058448C /* RandomUserConvenience.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -204,11 +213,14 @@
 				78D079D01C486AC900F8B98C /* EditMemberViewController.swift in Sources */,
 				782DA12C1C499DE200326DE9 /* MemberListTableViewController.swift in Sources */,
 				78D079CC1C48588D00F8B98C /* CustomHeaderCell.swift in Sources */,
+				78E79D4F1C4D933B0058448C /* Reach.swift in Sources */,
 				782DA1301C49BE9300326DE9 /* DateTimeViewController.swift in Sources */,
 				78D079C21C483BD500F8B98C /* SettingsTableViewController.swift in Sources */,
 				78E79D491C4B5F2A0058448C /* RandomUserClient.swift in Sources */,
+				78E79D4B1C4D616C0058448C /* RandomUserConvenience.swift in Sources */,
 				78D079D71C49607200F8B98C /* Appointment.swift in Sources */,
 				78D079B21C483A2800F8B98C /* CalendarViewController.swift in Sources */,
+				78E79D4D1C4D64960058448C /* ImageCache.swift in Sources */,
 				78D079AE1C483A2800F8B98C /* AppDelegate.swift in Sources */,
 				78D079CE1C48610B00F8B98C /* CustomMemberCell.swift in Sources */,
 				782DA12A1C49884C00326DE9 /* EditAppointmentViewController.swift in Sources */,

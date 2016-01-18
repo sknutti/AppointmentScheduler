@@ -62,11 +62,15 @@ class EditAppointmentViewController: UIViewController, UITextFieldDelegate, Edit
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        if (appointment.member == nil || appointment.interviewer == nil || appointment.interviewTime == nil) {
+            appointment.delete()
+        }
+    }
+    
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
-//        if appointment != nil {
-//            appointment.delete()
-//        }
     }
     
     func keyboardWillShow(sender: NSNotification) {
@@ -155,8 +159,6 @@ class EditAppointmentViewController: UIViewController, UITextFieldDelegate, Edit
     @IBAction func pickTime(sender: AnyObject) {
         let dateTimeViewController = storyboard?.instantiateViewControllerWithIdentifier("DateTimeVC") as! DateTimeViewController
         dateTimeViewController.delegate = self
-        dateTimeViewController.modalPresentationStyle = .Popover
-        dateTimeViewController.preferredContentSize = CGSizeMake(view.frame.width, 300)
         dateTimeViewController.appointment = appointment
         
         if let popoverController = dateTimeViewController.popoverPresentationController {
@@ -169,9 +171,8 @@ class EditAppointmentViewController: UIViewController, UITextFieldDelegate, Edit
     }
     
     func addDateTime(date: NSDate) {
-        appointment.interviewTime = date
-        timeButton.setTitle(formatDate(date), forState: .Normal)
-        CoreDataStackManager.sharedInstance().saveContext()
+        self.appointment.interviewTime = date
+        self.timeButton.setTitle(self.formatDate(date), forState: .Normal)
     }
     
     func formatDate(date: NSDate) -> String {
@@ -181,23 +182,37 @@ class EditAppointmentViewController: UIViewController, UITextFieldDelegate, Edit
     }
     
     @IBAction func saveAppointment(sender: AnyObject) {
-        do {
-            let record = try sharedContext.existingObjectWithID(appointment.objectID)
-            let existingAppointment = record as! Appointment
-            if (existingAppointment.objectID != appointment.objectID) {
-                appointment.delete()
+        if (appointment.member == nil) {
+            let alert = UIAlertController(title: "Error", message: "Cannot save an appointment without a member.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        } else if (appointment.interviewer == nil) {
+            let alert = UIAlertController(title: "Error", message: "Cannot save an appointment without an interviewer.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        } else if (appointment.interviewTime == nil) {
+            let alert = UIAlertController(title: "Error", message: "Cannot save an appointment without an interview time.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        } else {
+            do {
+                let record = try sharedContext.existingObjectWithID(appointment.objectID)
+                let existingAppointment = record as! Appointment
+                if (existingAppointment.objectID != appointment.objectID) {
+                    appointment.delete()
+                }
+                existingAppointment.setValue(self.locationTextfield.text, forKey: "location")
+                existingAppointment.setValue(self.isCompletedSwitch.on ? 1 : 0, forKey: "isCompleted")
+                
+                CoreDataStackManager.sharedInstance().saveContext()
+                if (navigationController != nil) {
+                    navigationController!.popViewControllerAnimated(true)
+                } else {
+                    dismissViewControllerAnimated(true, completion: nil)
+                }
+            } catch {
+                print(error)
             }
-            existingAppointment.setValue(self.locationTextfield.text, forKey: "location")
-            existingAppointment.setValue(self.isCompletedSwitch.on ? 1 : 0, forKey: "isCompleted")
-            
-            CoreDataStackManager.sharedInstance().saveContext()
-            if (navigationController != nil) {
-                navigationController!.popViewControllerAnimated(true)
-            } else {
-                dismissViewControllerAnimated(true, completion: nil)
-            }
-        } catch {
-            print(error)
         }
     }
     

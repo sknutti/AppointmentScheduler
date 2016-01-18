@@ -15,7 +15,7 @@ class Member: NSManagedObject {
     @NSManaged var memberPhone: String
     @NSManaged var memberEmail: String
     @NSManaged var isInterviewer: NSNumber
-    @NSManaged var profileImage: NSData
+    @NSManaged var profileImagePath: String?
     @NSManaged var appointments: [Appointment]
     
     override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
@@ -32,7 +32,19 @@ class Member: NSManagedObject {
         isInterviewer = dictionary["isInterviewer"]! as! NSNumber
     }
     
+    var profileImage: UIImage? {
+        
+        get {
+            return RandomUserClient.Caches.imageCache.imageWithIdentifier(profileImagePath)
+        }
+        
+        set {
+            RandomUserClient.Caches.imageCache.storeImage(newValue, withIdentifier: profileImagePath!)
+        }
+    }
+    
     func delete() {
+        RandomUserClient.Caches.imageCache.deleteImage(self.profileImagePath!)
         managedObjectContext?.deleteObject(self)
         
         do {

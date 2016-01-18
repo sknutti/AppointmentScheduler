@@ -154,4 +154,8 @@ class RandomUserClient: NSObject {
         
         return (!urlVars.isEmpty ? "?" : "") + urlVars.joinWithSeparator("&")
     }
+    
+    struct Caches {
+        static let imageCache = ImageCache()
+    }
 }
