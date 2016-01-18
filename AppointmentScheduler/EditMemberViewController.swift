@@ -113,8 +113,6 @@ class EditMemberViewController: UIViewController, UITextFieldDelegate {
         do {
             if let fetchResults = try self.sharedContext.executeFetchRequest(fetchRequest) as? [NSManagedObject] {
                 if fetchResults.count != 0 {
-                    print(self.memberNameTextfield.text?.characters.count)
-                    print(self.memberNameTextfield.text?.characters.count < 1)
                     if (self.memberNameTextfield.text?.characters.count < 1) {
                         let alert = UIAlertController(title: "Error", message: "Cannot save a member without a name.", preferredStyle: UIAlertControllerStyle.Alert)
                         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
