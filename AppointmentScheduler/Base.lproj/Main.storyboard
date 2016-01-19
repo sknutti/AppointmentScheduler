@@ -601,8 +601,8 @@
                                 <rect key="frame" x="251" y="355" width="84" height="74"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pca-Ch-M64">
-                                <rect key="frame" x="208" y="428" width="170" height="30"/>
-                                <state key="normal" title="Click to set profile image"/>
+                                <rect key="frame" x="194" y="428" width="199" height="30"/>
+                                <state key="normal" title="Click to change profile image"/>
                                 <connections>
                                     <action selector="getProfileImage:" destination="aeR-mF-ARR" eventType="touchUpInside" id="Y0e-tR-9bQ"/>
                                 </connections>
@@ -648,6 +648,7 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="yJg-c9-BLh" id="i84-bI-oSI"/>
+                        <outlet property="deleteButton" destination="eVl-g7-5ya" id="qjl-so-wdD"/>
                         <outlet property="deleteButtonConstraint" destination="oum-W5-QF9" id="5So-c9-zYV"/>
                         <outlet property="doneButton" destination="cIT-NG-pjw" id="xgm-tr-nB1"/>
                         <outlet property="doneButtonConstraint" destination="eeY-aF-mAG" id="Gcg-f8-BUD"/>

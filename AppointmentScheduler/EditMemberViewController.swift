@@ -25,6 +25,7 @@ class EditMemberViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var doneButtonConstraint: NSLayoutConstraint!
+    @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var deleteButtonConstraint: NSLayoutConstraint!
     
     var member: Member!
@@ -45,10 +46,12 @@ class EditMemberViewController: UIViewController, UITextFieldDelegate {
         if (member != nil) {
             titleLabel.text = "Edit Member"
             doneButton.setTitle("Update", forState: .Normal)
+            deleteButton.hidden = false
             populateForm()
         } else {
             titleLabel.text = "Add Member"
             doneButton.setTitle("Save", forState: .Normal)
+            deleteButton.hidden = true
         }
         
         memberNameTextfield.becomeFirstResponder()

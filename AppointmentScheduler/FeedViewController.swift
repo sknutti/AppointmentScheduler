@@ -144,9 +144,11 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         cancel.backgroundColor = UIColor.redColor()
         
         let complete = UITableViewRowAction(style: .Normal, title: "Mark Completed") { action, index in
-            appointment.isCompleted = 1
-            CoreDataStackManager.sharedInstance().saveContext()
-            tableView.setEditing(false, animated: true)
+            dispatch_async(dispatch_get_main_queue(), {
+                appointment.isCompleted = 1
+                CoreDataStackManager.sharedInstance().saveContext()
+                tableView.setEditing(false, animated: true)
+            })
         }
         complete.backgroundColor = UIColor.blueColor()
         
@@ -182,9 +184,7 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
         if let isCompleted = record.valueForKey("isCompleted") as? Bool {
-            if isCompleted {
-                cell.completedImage.hidden = false
-            }
+            cell.completedImage.hidden = !isCompleted
         }
     }
 }

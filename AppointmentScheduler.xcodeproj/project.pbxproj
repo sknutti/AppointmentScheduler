@@ -93,13 +93,9 @@
 			isa = PBXGroup;
 			children = (
 				78D079C61C483C4000F8B98C /* Model */,
-				78D079C31C483C0900F8B98C /* ViewControllers */,
+				78E79D501C4DDAF50058448C /* View */,
+				78D079C31C483C0900F8B98C /* Controller */,
 				78D079AD1C483A2800F8B98C /* AppDelegate.swift */,
-				78D079CB1C48588D00F8B98C /* CustomHeaderCell.swift */,
-				78D079CD1C48610B00F8B98C /* CustomMemberCell.swift */,
-				78E79D461C4B032A0058448C /* CustomAppointmentCell.swift */,
-				78E79D4E1C4D933B0058448C /* Reach.swift */,
-				78D079B31C483A2900F8B98C /* Main.storyboard */,
 				78D079B61C483A2900F8B98C /* Assets.xcassets */,
 				78D079B81C483A2900F8B98C /* LaunchScreen.storyboard */,
 				78D079BB1C483A2900F8B98C /* Info.plist */,
@@ -107,7 +103,7 @@
 			path = AppointmentScheduler;
 			sourceTree = "<group>";
 		};
-		78D079C31C483C0900F8B98C /* ViewControllers */ = {
+		78D079C31C483C0900F8B98C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				78D079AF1C483A2800F8B98C /* FeedViewController.swift */,
@@ -120,7 +116,7 @@
 				782DA12D1C49B70700326DE9 /* InterviewerListTableViewController.swift */,
 				782DA12F1C49BE9300326DE9 /* DateTimeViewController.swift */,
 			);
-			name = ViewControllers;
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		78D079C61C483C4000F8B98C /* Model */ = {
@@ -133,8 +129,20 @@
 				78D079D61C49607200F8B98C /* Appointment.swift */,
 				78E79D481C4B5F2A0058448C /* RandomUserClient.swift */,
 				78E79D4A1C4D616C0058448C /* RandomUserConvenience.swift */,
+				78E79D4E1C4D933B0058448C /* Reach.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		78E79D501C4DDAF50058448C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				78D079CB1C48588D00F8B98C /* CustomHeaderCell.swift */,
+				78D079CD1C48610B00F8B98C /* CustomMemberCell.swift */,
+				78E79D461C4B032A0058448C /* CustomAppointmentCell.swift */,
+				78D079B31C483A2900F8B98C /* Main.storyboard */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -45,6 +45,7 @@ class EditAppointmentViewController: UIViewController, UITextFieldDelegate, Edit
         if (appointment != nil) {
             titleLabel.text = "Edit Appointment"
             doneButton.setTitle("Update", forState: .Normal)
+            deleteButton.hidden = false
             populateForm()
         } else {
             /* create a new appointment object */
@@ -53,6 +54,7 @@ class EditAppointmentViewController: UIViewController, UITextFieldDelegate, Edit
             
             titleLabel.text = "Add Appointment"
             doneButton.setTitle("Save", forState: .Normal)
+            deleteButton.hidden = true
             
             isCompletedLabel.hidden = true
             isCompletedSwitch.hidden = true
