@@ -206,7 +206,9 @@ class EditAppointmentViewController: UIViewController, UITextFieldDelegate, Edit
                 existingAppointment.setValue(self.locationTextfield.text, forKey: "location")
                 existingAppointment.setValue(self.isCompletedSwitch.on ? 1 : 0, forKey: "isCompleted")
                 
-                CoreDataStackManager.sharedInstance().saveContext()
+                dispatch_async(dispatch_get_main_queue()) {
+                    CoreDataStackManager.sharedInstance().saveContext()
+                }
                 if (navigationController != nil) {
                     navigationController!.popViewControllerAnimated(true)
                 } else {

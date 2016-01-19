@@ -115,7 +115,9 @@ extension RandomUserClient {
                 }
             }
             
-            CoreDataStackManager.sharedInstance().saveContext()
+            dispatch_async(dispatch_get_main_queue()) {
+                CoreDataStackManager.sharedInstance().saveContext()
+            }
         } else {
             activityIndicatorView.stopAnimating()
         }

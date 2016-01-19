@@ -100,7 +100,9 @@ extension MemberTableViewController: NSFetchedResultsControllerDelegate {
             let numRecords = fetchedResultsController.sections![0].numberOfObjects
             headerLabel.text = "Members (\(numRecords))"
             
-            CoreDataStackManager.sharedInstance().saveContext()
+            dispatch_async(dispatch_get_main_queue()) {
+                CoreDataStackManager.sharedInstance().saveContext()
+            }
     }
 }
 

@@ -13,7 +13,6 @@
 		782DA1301C49BE9300326DE9 /* DateTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782DA12F1C49BE9300326DE9 /* DateTimeViewController.swift */; };
 		78D079AE1C483A2800F8B98C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D079AD1C483A2800F8B98C /* AppDelegate.swift */; };
 		78D079B01C483A2800F8B98C /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D079AF1C483A2800F8B98C /* FeedViewController.swift */; };
-		78D079B21C483A2800F8B98C /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D079B11C483A2800F8B98C /* CalendarViewController.swift */; };
 		78D079B51C483A2900F8B98C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78D079B31C483A2900F8B98C /* Main.storyboard */; };
 		78D079B71C483A2900F8B98C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78D079B61C483A2900F8B98C /* Assets.xcassets */; };
 		78D079BA1C483A2900F8B98C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78D079B81C483A2900F8B98C /* LaunchScreen.storyboard */; };
@@ -41,7 +40,6 @@
 		78D079AA1C483A2800F8B98C /* AppointmentScheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppointmentScheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78D079AD1C483A2800F8B98C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78D079AF1C483A2800F8B98C /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		78D079B11C483A2800F8B98C /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		78D079B41C483A2900F8B98C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		78D079B61C483A2900F8B98C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78D079B91C483A2900F8B98C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				78D079AF1C483A2800F8B98C /* FeedViewController.swift */,
-				78D079B11C483A2800F8B98C /* CalendarViewController.swift */,
 				78D079C11C483BD500F8B98C /* SettingsTableViewController.swift */,
 				78D079C91C484CEE00F8B98C /* MemberTableViewController.swift */,
 				78D079CF1C486AC900F8B98C /* EditMemberViewController.swift */,
@@ -227,7 +224,6 @@
 				78E79D491C4B5F2A0058448C /* RandomUserClient.swift in Sources */,
 				78E79D4B1C4D616C0058448C /* RandomUserConvenience.swift in Sources */,
 				78D079D71C49607200F8B98C /* Appointment.swift in Sources */,
-				78D079B21C483A2800F8B98C /* CalendarViewController.swift in Sources */,
 				78E79D4D1C4D64960058448C /* ImageCache.swift in Sources */,
 				78D079AE1C483A2800F8B98C /* AppDelegate.swift in Sources */,
 				78D079CE1C48610B00F8B98C /* CustomMemberCell.swift in Sources */,

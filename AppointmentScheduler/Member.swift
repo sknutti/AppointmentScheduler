@@ -47,10 +47,12 @@ class Member: NSManagedObject {
         RandomUserClient.Caches.imageCache.deleteImage(self.profileImagePath!)
         managedObjectContext?.deleteObject(self)
         
-        do {
-            try managedObjectContext?.save()
-        } catch {
-            print("Error deleting \(error)")
+        dispatch_async(dispatch_get_main_queue()) {
+            do {
+                try self.managedObjectContext?.save()
+            } catch {
+                print("Error deleting \(error)")
+            }
         }
     }
 }

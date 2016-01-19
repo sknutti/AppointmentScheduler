@@ -33,10 +33,12 @@ class Appointment: NSManagedObject {
     func delete() {
         managedObjectContext?.deleteObject(self)
         
-        do {
-            try managedObjectContext?.save()
-        } catch {
-            print("Error deleting \(error)")
+        dispatch_async(dispatch_get_main_queue()) {
+            do {
+                try self.managedObjectContext?.save()
+            } catch {
+                print("Error deleting \(error)")
+            }
         }
     }
 }
